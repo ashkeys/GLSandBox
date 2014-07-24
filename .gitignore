@@ -23,3 +23,5 @@
 /GLSandBox/*.suo
 /GLSandBox/GLSandBox/*.filters
 /GLSandBox/GLSandBox/*.user
+/GLSandBox/ipch
+/GLSandBox/ipch/glsandbox-51570fb
