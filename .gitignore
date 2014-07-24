@@ -36,3 +36,6 @@
 *.cache
 *.rc
 *.idb
+Debug
+ipch
+Release
