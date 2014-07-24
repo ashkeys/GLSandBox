@@ -19,9 +19,20 @@
 *.exe
 *.out
 *.app
-/GLSandBox/*.sdf
-/GLSandBox/*.suo
-/GLSandBox/GLSandBox/*.filters
-/GLSandBox/GLSandBox/*.user
-/GLSandBox/ipch
-/GLSandBox/ipch/glsandbox-51570fb
+
+# etc.
+*.sdf
+*.suo
+*.filters
+*.user
+*.ipch
+*.ilk
+*.pdb
+*.tlog
+*.manifest
+*.res
+*.lastbuildstate
+*.log
+*.cache
+*.rc
+*.idb
