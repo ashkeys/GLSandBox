@@ -98,10 +98,10 @@ void display()
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 	gluPerspective(35.0, (double)WINDOW_WIDTH / (double)WINDOW_HEIGHT, 1.0, 3000.0);
-	gluLookAt(0.0, 0.0, 500.0, 0.0, 0.0, -1000.0, 0.0, 1.0, 0.0);
 
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
+	gluLookAt(0.0, 0.0, 500.0, 0.0, 0.0, -1000.0, 0.0, 1.0, 0.0);
 
 	double x, y, z, pitch, yaw, roll;
 	x = y = z = pitch = yaw = roll = 10.0;
