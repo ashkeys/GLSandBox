@@ -19,3 +19,7 @@
 *.exe
 *.out
 *.app
+/GLSandBox/*.sdf
+/GLSandBox/*.suo
+/GLSandBox/GLSandBox/*.filters
+/GLSandBox/GLSandBox/*.user
