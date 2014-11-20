@@ -9,8 +9,8 @@
  */
 
 // include
-#include <gl/freeglut.h>
 #include <iostream>
+#include <gl/glut.h>
 
 // define
 #define WINDOW_X			100
@@ -19,7 +19,7 @@
 #define WINDOW_HEIGHT	600
 
 // プロトタイプ宣言
-void InitWindow(const char* winName);
+void InitWindow(const char* const winName);
 void Init();
 void display();
 void update();
@@ -57,7 +57,7 @@ int main(int argc, char* argv[])
  *
  * @param [in] winName 作成するウィンドウの名前
  */
-void InitWindow(const char* winName)
+void InitWindow(const char* const winName)
 {
 	glutInitWindowPosition(WINDOW_X, WINDOW_Y);
 	glutInitWindowSize(WINDOW_WIDTH, WINDOW_HEIGHT);
@@ -80,6 +80,7 @@ void Init()
  */
 void update()
 {
+	glutPostRedisplay();
 }
 
 /**
@@ -95,10 +96,12 @@ void display()
 
 	glEnable(GL_DEPTH_TEST);
 
+	// 投影変換
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 	gluPerspective(35.0, (double)WINDOW_WIDTH / (double)WINDOW_HEIGHT, 1.0, 3000.0);
 
+	// モデルビュー変換
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 	gluLookAt(0.0, 0.0, 500.0, 0.0, 0.0, -1000.0, 0.0, 1.0, 0.0);
@@ -108,10 +111,10 @@ void display()
 
 	glPushMatrix();
 	{
-		glRotated(pitch, 1.0, 0.0, 0.0);
-		glRotated(yaw, 0.0, 1.0, 0.0);
-		glRotated(roll, 0.0, 0.0, 1.0);
 		glTranslated(x, y, z);
+		glRotated(yaw, 0.0, 1.0, 0.0);
+		glRotated(pitch, 1.0, 0.0, 0.0);
+		glRotated(roll, 0.0, 0.0, 1.0);
 		glutSolidCube(100.0);
 	}
 	glPopMatrix();
@@ -119,7 +122,6 @@ void display()
 	glDisable(GL_DEPTH_TEST);
 
 	glutSwapBuffers();
-	glutPostRedisplay();
 }
 
 /**
